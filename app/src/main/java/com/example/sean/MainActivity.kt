@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview(showBackground = true)
+
 @Composable
 fun Greeting() {
 
@@ -90,6 +90,21 @@ fun Greeting() {
           )
       {
           Text(text = "Image", color = Color.Blue)
+      }
+
+      val input = LocalContext.current
+      Button(onClick = {
+
+          input.startActivity(Intent(input, InputActivity::class.java))
+
+      },
+          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+          border = BorderStroke(2.dp, Color.Blue),
+          shape = CutCornerShape(10)
+
+      )
+      {
+          Text(text = "Input", color = Color.Blue)
       }
 
   }

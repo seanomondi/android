@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Sean"
         tools:targetApi="31">
         <activity
+            android:name="com.example.sean.InputActivity"
+            android:exported="false"
+            android:label="@string/title_activity_input"
+            android:theme="@style/Theme.Sean" />
+        <activity
             android:name="com.example.sean.MainActivity"
             android:exported="true"
             android:label="sean"

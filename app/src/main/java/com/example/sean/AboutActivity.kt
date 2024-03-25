@@ -73,7 +73,7 @@ fun About() {
             Text(text = "About")
             Spacer(modifier = Modifier.width(20.dp))
 
-            Text(text = "Updates")
+            Text(text = "Images")
         }
 
 
