@@ -47,10 +47,10 @@ fun Greeting() {
       modifier = Modifier
           .background(Color.LightGray)
           .fillMaxSize()
-          .padding(20.dp)
+          .padding(20.dp),
 
-//      verticalArrangement = Arrangement.Center,
-//      horizontalAlignment = Alignment.CenterHorizontally
+      verticalArrangement = Arrangement.Center,
+      horizontalAlignment = Alignment.CenterHorizontally
 
   ) {
       Text("This is the first android project")
@@ -72,16 +72,16 @@ fun Greeting() {
           shape = CutCornerShape(10)
 
           ) {
-          
+
           Text(text = "About", color = Color.Blue)
-          
+
       }
-      
+
       val image = LocalContext.current
       Button(onClick = {
-          
+
           image.startActivity(Intent(image, ImageActivity::class.java))
-          
+
       },
           colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
           border = BorderStroke(2.dp, Color.Blue),
@@ -105,6 +105,66 @@ fun Greeting() {
       )
       {
           Text(text = "Input", color = Color.Blue)
+      }
+
+      val scroll = LocalContext.current
+      Button(onClick = {
+
+          scroll.startActivity(Intent(scroll, ScrollActivity::class.java))
+
+      },
+          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+          border = BorderStroke(2.dp, Color.Blue),
+          shape = CutCornerShape(10)
+
+      )
+      {
+          Text(text = "Scroll", color = Color.Blue)
+      }
+
+      val cards = LocalContext.current
+      Button(onClick = {
+
+          cards.startActivity(Intent(cards, CardActivity::class.java))
+
+      },
+          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+          border = BorderStroke(2.dp, Color.Blue),
+          shape = CutCornerShape(10)
+
+      )
+      {
+          Text(text = "Cards", color = Color.Blue)
+      }
+
+      val grid = LocalContext.current
+      Button(onClick = {
+
+          grid.startActivity(Intent(grid, GridActivity::class.java))
+
+      },
+          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+          border = BorderStroke(2.dp, Color.Blue),
+          shape = CutCornerShape(10)
+
+      )
+      {
+          Text(text = "Grid", color = Color.Blue)
+      }
+
+      val a1 = LocalContext.current
+      Button(onClick = {
+
+          a1.startActivity(Intent(a1, AssignmentActivity::class.java))
+
+      },
+          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+          border = BorderStroke(2.dp, Color.Blue),
+          shape = CutCornerShape(10)
+
+      )
+      {
+          Text(text = "Assignment1", color = Color.Blue)
       }
 
   }

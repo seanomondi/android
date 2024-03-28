@@ -7,6 +7,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,6 +21,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -46,57 +49,60 @@ class ImageActivity : ComponentActivity() {
 @Composable
 fun Picha() {
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.LightGray)
-            .padding(20.dp)
-    ) {
-
+    Box {
 
 
         Image(painter = painterResource(id = R.drawable.focus),
             contentDescription = "image",
             modifier = Modifier
+                .fillMaxSize(),
 //                .background(Color.White)
-                .clip(CircleShape)
-                 .size(200.dp),
-//            colorFilter = ColorFilter.tint(Color.Cyan)
-//            contentScale = ContentScale.FillBounds
-            )
+//                .clip(CircleShape)
+//                .size(200.dp),
+            colorFilter = ColorFilter.tint(Color.LightGray),
+            contentScale = ContentScale.Crop
+        )
 
-
-
-        val home = LocalContext.current
-        Button(onClick = {
-
-            home.startActivity(Intent(home, MainActivity::class.java))
-
-        }) {
-
-            Text(text = "Home")
-
-        }
-
-        val about = LocalContext.current
-        Button(onClick = {
-
-            about.startActivity(Intent(about, AboutActivity::class.java))
-
-        },
-//         colors = ButtonDefaults.buttonColors(Color.Blue),
-            colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-            border = BorderStroke(2.dp, Color.Blue),
-//         shape = RectangleShape,
-//         shape = RoundedCornerShape(10.dp),
-            shape = CutCornerShape(10)
-
+        Column(
+            modifier = Modifier
+//                .fillMaxSize()
+//                .background(Color.LightGray)
+                .padding(50.dp)
         ) {
 
-            Text(text = "About", color = Color.Blue)
+            val home = LocalContext.current
+            Button(onClick = {
+
+                home.startActivity(Intent(home, MainActivity::class.java))
+
+            }) {
+
+                Text(text = "Home")
+
+            }
+
+            val about = LocalContext.current
+            Button(onClick = {
+
+                about.startActivity(Intent(about, AboutActivity::class.java))
+
+            },
+//         colors = ButtonDefaults.buttonColors(Color.Blue),
+//                colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+//                border = BorderStroke(2.dp, Color.Blue),
+//         shape = RectangleShape,
+//         shape = RoundedCornerShape(10.dp),
+//                shape = CutCornerShape(10)
+
+            ) {
+
+                Text(text = "About",
+//                    color = Color.Blue
+                )
+
+            }
 
         }
-
     }
 
 
