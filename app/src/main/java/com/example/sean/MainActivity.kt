@@ -167,6 +167,36 @@ fun Greeting() {
           Text(text = "Assignment1", color = Color.Blue)
       }
 
+      val a2 = LocalContext.current
+      Button(onClick = {
+
+          a2.startActivity(Intent(a2, AssignmentActivity2::class.java))
+
+      },
+          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+          border = BorderStroke(2.dp, Color.Blue),
+          shape = CutCornerShape(10)
+
+      )
+      {
+          Text(text = "Assignment2", color = Color.Blue)
+      }
+
+//      val im = LocalContext.current
+//      Button(onClick = {
+//
+//          im.startActivity(Intent(im, ImagePickerActivity::class.java))
+//
+//      },
+//          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+//          border = BorderStroke(2.dp, Color.Blue),
+//          shape = CutCornerShape(10)
+//
+//      )
+//      {
+//          Text(text = "ImagePicker", color = Color.Blue)
+//      }
+
   }
 
 }

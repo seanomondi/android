@@ -214,7 +214,7 @@ fun Assignment1() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ){
                 Card {
-                    Image(painter = painterResource(id = R.drawable.focus), contentDescription = "", Modifier.size(100.dp))
+                    Image(painter = painterResource(id = R.drawable.focus), contentDescription = "", Modifier.size(150.dp))
                     Column {
                         Text(text = "Nusa Penida")
                         Row {
@@ -224,10 +224,10 @@ fun Assignment1() {
                     }
                 }
 
-                Spacer(modifier = Modifier.width(30.dp))
+                Spacer(modifier = Modifier.width(20.dp))
 
                 Card {
-                    Image(painter = painterResource(id = R.drawable.focus), contentDescription = "", Modifier.size(100.dp))
+                    Image(painter = painterResource(id = R.drawable.focus), contentDescription = "", Modifier.size(150.dp))
                     Column {
                         Text(text = "Tanah Lot")
                         Row {
@@ -239,6 +239,39 @@ fun Assignment1() {
 
             }
 
+
+            Row(
+                modifier = Modifier
+                    .padding(10.dp)
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ){
+                Card {
+                    Image(painter = painterResource(id = R.drawable.focus), contentDescription = "", Modifier.size(150.dp))
+                    Column {
+                        Text(text = "Nusa Penida")
+                        Row {
+                            Icon(imageVector = Icons.Default.LocationOn, contentDescription = "")
+                            Text(text = "Nusa Penida")
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Card {
+                    Image(painter = painterResource(id = R.drawable.focus), contentDescription = "", Modifier.size(150.dp))
+                    Column {
+                        Text(text = "Tanah Lot")
+                        Row {
+                            Icon(imageVector = Icons.Default.LocationOn, contentDescription = "")
+                            Text(text = "Tanah Lot")
+                        }
+                    }
+                }
+
+            }
+        
 
         }
     }

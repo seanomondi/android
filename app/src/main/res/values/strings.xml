@@ -7,4 +7,6 @@
     <string name="title_activity_card">CardActivity</string>
     <string name="title_activity_grid">GridActivity</string>
     <string name="title_activity_assignment">AssignmentActivity</string>
+    <string name="title_activity_assignment2">AssignmentActivity2</string>
+    <string name="title_activity_image_picker">ImagePickerActivity</string>
 </resources>
