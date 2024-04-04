@@ -15,6 +15,11 @@
         android:theme="@style/Theme.Sean"
         tools:targetApi="31">
         <activity
+            android:name="com.example.sean.WebActivity"
+            android:exported="false"
+            android:label="@string/title_activity_web"
+            android:theme="@style/Theme.Sean" />
+        <activity
             android:name="com.example.sean.ImagePickerActivity"
             android:exported="false"
             android:label="@string/title_activity_image_picker"

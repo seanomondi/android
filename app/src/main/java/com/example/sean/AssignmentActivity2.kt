@@ -10,8 +10,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
@@ -36,6 +41,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.example.sean.ui.theme.SeanTheme
 import com.sean.sean.R
@@ -81,40 +87,50 @@ fun Assignment2() {
                     Icon(imageVector = Icons.Default.Star, contentDescription = "")
                     Text(text = "travelezy")
                 }
-
-                Column(
-                    modifier =Modifier
-                        .background(Color.DarkGray),
-                    verticalArrangement = Arrangement.Bottom,
-                    horizontalAlignment = Alignment.CenterHorizontally
+                
+                Spacer(modifier = Modifier.height(400.dp))
+                
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Absolute.Center
                 ) {
-                    Text(text = "Explore the world here", fontWeight = FontWeight.Bold, color = Color.White, textAlign = TextAlign.Center)
-                    Text(text = "The best travel app in the world in 2021.", color = Color.White, textAlign = TextAlign.Center)
-                    Text(text = "Answer of traveller to find their journey.", color = Color.White, textAlign = TextAlign.Center)
-
-                    val account = LocalContext.current
-                    Button(onClick = {
-                        account.startActivity(Intent(account, GridActivity::class.java))
-                    },
-                        shape = RoundedCornerShape(20.dp),
-                        colors = ButtonDefaults.buttonColors(Color.White)
+                    Column(
+                        modifier = Modifier
+                            .width(250.dp)
+                            .height(150.dp)
+                            .background(Color.DarkGray),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Text(text = "Create an account", color = Color.Black)
+                        Text(text = "Explore the world here", fontWeight = FontWeight.Bold, color = Color.White, textAlign = TextAlign.Center)
+                        Text(text = "The best travel app in the world in 2021.", color = Color.White, textAlign = TextAlign.Center)
+                        Text(text = "Answer of traveller to find their journey.", color = Color.White, textAlign = TextAlign.Center)
+
+                        val account = LocalContext.current
+                        Button(onClick = {
+                            account.startActivity(Intent(account, GridActivity::class.java))
+                        },
+                            shape = RoundedCornerShape(20.dp),
+                            colors = ButtonDefaults.buttonColors(Color.White)
+                        ) {
+                            Text(text = "Create an account", color = Color.Black)
+                        }
+
+                        val ac = AnnotatedString("Already have an account?",
+                            spanStyle = SpanStyle(Color.White)
+                        )
+
+                        val ac2 = LocalContext.current
+                        ClickableText(text = ac, onClick = {
+
+                            ac2.startActivity(Intent(ac2, GridActivity::class.java))
+
+                        })
+
                     }
 
-                    val ac = AnnotatedString("Already have an account?",
-                        spanStyle = SpanStyle(Color.White)
-                    )
-
-                    val ac2 = LocalContext.current
-                    ClickableText(text = ac, onClick = {
-
-                        ac2.startActivity(Intent(ac2, GridActivity::class.java))
-
-                    })
-
                 }
-
             }
 
         }
