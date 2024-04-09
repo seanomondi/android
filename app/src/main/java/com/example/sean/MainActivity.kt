@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -42,176 +43,198 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting() {
 
-  Column(
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            item {
+                Column(
 
-      modifier = Modifier
-          .background(Color.LightGray)
-          .fillMaxSize()
-          .padding(20.dp),
+                    modifier = Modifier
+                        .background(Color.LightGray)
+                        .fillMaxSize()
+                        .padding(20.dp),
 
-      verticalArrangement = Arrangement.Center,
-      horizontalAlignment = Alignment.CenterHorizontally
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
 
-  ) {
-      Text("This is the first android project")
+                ) {
+                    Text("This is the first android project")
 
-      Text("android app development", color = Color.Gray)
+                    Text("android app development", color = Color.Gray)
 
 
-      val about = LocalContext.current
-      Button(onClick = {
+                    val about = LocalContext.current
+                    Button(onClick = {
 
-          about.startActivity(Intent(about, AboutActivity::class.java))
+                        about.startActivity(Intent(about, AboutActivity::class.java))
 
-      },
+                    },
 //         colors = ButtonDefaults.buttonColors(Color.Blue),
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
 //         shape = RectangleShape,
 //         shape = RoundedCornerShape(10.dp),
-          shape = CutCornerShape(10)
+                        shape = CutCornerShape(10)
 
-          ) {
+                    ) {
 
-          Text(text = "About", color = Color.Blue)
+                        Text(text = "About", color = Color.Blue)
 
-      }
+                    }
 
-      val image = LocalContext.current
-      Button(onClick = {
+                    val image = LocalContext.current
+                    Button(onClick = {
 
-          image.startActivity(Intent(image, ImageActivity::class.java))
+                        image.startActivity(Intent(image, ImageActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-          )
-      {
-          Text(text = "Image", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Image", color = Color.Blue)
+                    }
 
-      val input = LocalContext.current
-      Button(onClick = {
+                    val input = LocalContext.current
+                    Button(onClick = {
 
-          input.startActivity(Intent(input, InputActivity::class.java))
+                        input.startActivity(Intent(input, InputActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Input", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Input", color = Color.Blue)
+                    }
 
-      val scroll = LocalContext.current
-      Button(onClick = {
+                    val scroll = LocalContext.current
+                    Button(onClick = {
 
-          scroll.startActivity(Intent(scroll, ScrollActivity::class.java))
+                        scroll.startActivity(Intent(scroll, ScrollActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Scroll", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Scroll", color = Color.Blue)
+                    }
 
-      val cards = LocalContext.current
-      Button(onClick = {
+                    val cards = LocalContext.current
+                    Button(onClick = {
 
-          cards.startActivity(Intent(cards, CardActivity::class.java))
+                        cards.startActivity(Intent(cards, CardActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Cards", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Cards", color = Color.Blue)
+                    }
 
-      val grid = LocalContext.current
-      Button(onClick = {
+                    val grid = LocalContext.current
+                    Button(onClick = {
 
-          grid.startActivity(Intent(grid, GridActivity::class.java))
+                        grid.startActivity(Intent(grid, GridActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Grid", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Grid", color = Color.Blue)
+                    }
 
-      val a1 = LocalContext.current
-      Button(onClick = {
+                    val a1 = LocalContext.current
+                    Button(onClick = {
 
-          a1.startActivity(Intent(a1, AssignmentActivity::class.java))
+                        a1.startActivity(Intent(a1, AssignmentActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Assignment1", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Assignment1", color = Color.Blue)
+                    }
 
-      val a2 = LocalContext.current
-      Button(onClick = {
+                    val a2 = LocalContext.current
+                    Button(onClick = {
 
-          a2.startActivity(Intent(a2, AssignmentActivity2::class.java))
+                        a2.startActivity(Intent(a2, AssignmentActivity2::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Assignment2", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Assignment2", color = Color.Blue)
+                    }
 
-      val im = LocalContext.current
-      Button(onClick = {
+                    val a3 = LocalContext.current
+                    Button(onClick = {
 
-          im.startActivity(Intent(im, ImagePickerActivity::class.java))
+                        a3.startActivity(Intent(a3, AssignmentActivity3::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Image Picker", color = Color.Blue)
-      }
+                    )
+                    {
+                        Text(text = "Assignment3", color = Color.Blue)
+                    }
 
-      val web = LocalContext.current
-      Button(onClick = {
+                    val im = LocalContext.current
+                    Button(onClick = {
 
-          web.startActivity(Intent(web, WebActivity::class.java))
+                        im.startActivity(Intent(im, ImagePickerActivity::class.java))
 
-      },
-          colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
-          border = BorderStroke(2.dp, Color.Blue),
-          shape = CutCornerShape(10)
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
 
-      )
-      {
-          Text(text = "Web", color = Color.Blue)
-      }
-  }
+                    )
+                    {
+                        Text(text = "Image Picker", color = Color.Blue)
+                    }
 
-}
+                    val web = LocalContext.current
+                    Button(onClick = {
+
+                        web.startActivity(Intent(web, WebActivity::class.java))
+
+                    },
+                        colors = ButtonDefaults.outlinedButtonColors(Color.Transparent),
+                        border = BorderStroke(2.dp, Color.Blue),
+                        shape = CutCornerShape(10)
+
+                    )
+                    {
+                        Text(text = "Web", color = Color.Blue)
+                    }
+                }
+            }
+        }
+
+    }
 
